@@ -1,0 +1,24 @@
+{% load static %}
+{% load shop_tags %}
+{% get_filters as data %}
+
+<div class="dis-none panel-filter w-full p-t-10">
+    <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
+        {% for key in data %}
+        <div class="filter-col4 p-b-27">
+            <div class="mtext-102 cl2 p-b-15">
+                {{key.title}}:
+            </div>
+            {% for item in key.filters %}
+            <div class="row flex-w p-t-4 m-r--5">
+                <a href="?sort={{item.0}}"
+                   class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+                    {{item.1}}
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+        {% endfor %}
+    </div>
+</div>

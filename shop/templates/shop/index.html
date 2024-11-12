@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block main %}
+<main>
+    {% for category in categories %}
+    <div class="mt-5">
+    <section class="products-section products_section-watches">
+        <h2 class="main_title text-center">{{category.title}} Collection:</h2>
+        <div class="container mt-5">
+            <div class="row">
+                {% for product in category.products %}
+                {% include 'shop/components/product_card.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+    </div>
+</main>
+{% endblock main %}

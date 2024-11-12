@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!--head start-->
+{% include 'components/head.html'%}
+<!--head end-->
+
+<body class="animsition">
+
+<!-- Header -->
+{% include 'components/header.html'%}
+<!--	 Header end-->
+
+
+<!-- Slider -->
+{% block slider %}
+{% include 'components/slider.html' %}
+{% endblock slider %}
+<!--slider end-->
+
+{% block main %}
+{% endblock main %}
+
+
+<!-- Footer -->
+{% include 'layout/footer.html' %}
+<!--Footer end-->
+
+</body>
+</html>
